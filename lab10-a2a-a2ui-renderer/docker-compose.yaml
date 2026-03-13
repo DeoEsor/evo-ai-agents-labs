@@ -1,0 +1,6 @@
+services:
+  a2ui-renderer:
+    build: .
+    ports:
+      - "${PORT:-3000}:80"
+    restart: unless-stopped
