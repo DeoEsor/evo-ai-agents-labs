@@ -6,10 +6,10 @@ from opentelemetry import trace
 from pydantic import Field
 
 from mcp_instance import mcp
-from ..calculations import differential_schedule
-from ..validators import check_principal, check_rate, check_months
-from ..metrics import TOOL_CALLS, CALCULATION_ERRORS, API_CALLS
-from .utils import ToolResult, format_calculation_result
+from calculations import differential_schedule
+from validators import check_principal, check_rate, check_months
+from metrics import TOOL_CALLS, CALCULATION_ERRORS, API_CALLS
+from tools.utils import ToolResult, format_calculation_result
 
 tracer = trace.get_tracer(__name__)
 

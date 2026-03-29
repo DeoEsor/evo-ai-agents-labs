@@ -2,9 +2,14 @@
 import os
 from typing import Optional, List
 from strands import Agent
-from strands.tools import load_tool, editor, shell
 from strands.tools.mcp.mcp_client import MCPClient
 from mcp.client.streamable_http import streamablehttp_client
+
+try:
+    from strands.tools import load_tool, editor, shell
+    _HAS_META_TOOLS = True
+except ImportError:
+    _HAS_META_TOOLS = False
 
 
 # Системный промпт для создания инструментов
@@ -92,8 +97,8 @@ def create_strands_agent(mcp_urls: Optional[str] = None):
         TOOL_BUILDER_SYSTEM_PROMPT
     )
     
-    # Базовые инструменты для meta-tooling
-    tools = [load_tool, editor, shell]
+    # Базовые инструменты для meta-tooling (если доступны)
+    tools = [load_tool, editor, shell] if _HAS_META_TOOLS else []
     
     # Получаем инструменты из MCP серверов
     mcp_tools, mcp_clients = get_mcp_tools(mcp_urls)

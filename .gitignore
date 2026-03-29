@@ -3,4 +3,5 @@
 
 # Environment variables
 .env
-!.env.example
+!.env.example__pycache__/
+*.pyc

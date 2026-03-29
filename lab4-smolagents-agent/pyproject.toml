@@ -8,7 +8,7 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
 dependencies = [
-    "smolagents>=0.1.0,<1.0.0",
+    "smolagents>=1.0.0",
     "a2a-sdk>=0.3.4,<0.4.0",
     "litellm>=1.76.3,<2.0.0",
     "openinference-instrumentation-smolagents>=0.1.0,<0.2.0",

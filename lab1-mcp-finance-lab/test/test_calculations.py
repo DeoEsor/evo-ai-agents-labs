@@ -114,9 +114,8 @@ class TestCompareLoans:
         assert "annuity" in result["comparison"]
         assert "differential" in result["comparison"]
         assert "difference" in result["comparison"]
-        assert "recommendation" in result
-        
         comparison = result["comparison"]
+        assert "recommendation" in comparison
         assert comparison["annuity"]["total_paid"] > 0
         assert comparison["differential"]["total_paid"] > 0
         

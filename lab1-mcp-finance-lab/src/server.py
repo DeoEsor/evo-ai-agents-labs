@@ -116,7 +116,7 @@ except Exception as e:
     traceback.print_exc()
 
 try:
-    from tools.investment_calculator import investment_calculator
+    from tools.investment_calculator import investment_calculator_tool
     print("✅ investment_calculator загружен")
 except Exception as e:
     print(f"❌ Ошибка импорта investment_calculator: {e}")

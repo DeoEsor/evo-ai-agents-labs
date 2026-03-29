@@ -1,7 +1,7 @@
 """Определение агентов для CrewAI crew."""
 import os
 from crewai import Agent
-from crewai_tools import BaseTool
+from crewai.tools import BaseTool
 import httpx
 import asyncio
 
