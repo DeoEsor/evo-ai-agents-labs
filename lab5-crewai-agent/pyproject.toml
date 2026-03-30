@@ -10,7 +10,7 @@ requires-python = ">=3.12,<4.0"
 dependencies = [
     "crewai>=0.100.0",
     "crewai-tools>=0.80.0",
-    "a2a-sdk>=0.3.4",
+    "a2a-sdk[http-server]>=0.3.4",
     "litellm>=1.50.0",
     "openinference-instrumentation-crewai>=0.1.0,<0.2.0",
     "arize-phoenix-otel>=0.13.0,<0.14.0",
