@@ -70,10 +70,21 @@ def main():
             http_handler=request_handler
         )
         
+        # Добавляем CORS middleware
+        from starlette.middleware.cors import CORSMiddleware
+        app = server.build()
+        app.add_middleware(
+            CORSMiddleware,
+            allow_origins=["*"],  # Allow all origins for development
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
+        
         import uvicorn
         port = int(os.getenv("PORT", 10000))
         logger.info(f"Starting LangChain Agent server on port {port}")
-        uvicorn.run(server.build(), host='0.0.0.0', port=port)
+        uvicorn.run(app, host='0.0.0.0', port=port)
         
     except Exception as e:
         logger.error(f'An error occurred during server startup: {e}', exc_info=True)
