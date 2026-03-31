@@ -63,7 +63,7 @@ func InitTracing(serviceName string) error {
 // noopExporter - пустой экспортер для локальной разработки
 type noopExporter struct{}
 
-func (e *noopExporter) ExportSpans(ctx context.Context, spans []sdktrace.ReadWriteSpan) error {
+func (e *noopExporter) ExportSpans(ctx context.Context, spans []sdktrace.ReadOnlySpan) error {
 	return nil
 }
 
